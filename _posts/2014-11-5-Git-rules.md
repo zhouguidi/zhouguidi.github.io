@@ -29,6 +29,32 @@ Open the file _config.yml in the root directory of your repository, which contai
 #Step 3: Post your first blog
 So far all you see in your website is a sample blog. Time to post your own. Blogs could be written in any of your favorate mark-up language, but I like markdown. Consulte to [this page](https://guides.github.com/features/mastering-markdown/) for a tutorial of the markdown syntax that [GitHub] supports.
 
+Browse into the `_post` directory in your repository, and you'll see a file called `2014-3-3-Hello-World.md` which is the sample blog. The naming of the blog files is very important in [Jekyll]: the date as YYYY-M-D, the title of the blog, and the language extension. Rename the sample file to fit your needs:
+
+```bash
+cd _posts
+mv 2014-3-3-Hello-World.md 2014-11-5-My-first-blog.md
+```
+
+Open the file with whatever text editor of your choice, and you'll see these lines:
+
+```markdown
+---
+layout: post
+title: Git rules!
+---
+```
+
+This is where you configure your blog post, and is called "front-matter" in [Jekyll]. The _layout_ entry tells [Jekyll] to use *_layouts/post.html* as the template of this blog, while the _title_ entry, as you may have already guessed, sets the title. The rest of the file is all yours. Write anything in markdown syntax.
+
+After all your changes, don't forget to commit and push to get your website updated:
+
+```bash
+git add .
+git commit -m "changed something"
+git push
+```
+
 #Step 4: Customize it
 
 
