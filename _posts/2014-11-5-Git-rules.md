@@ -20,11 +20,11 @@ Now head for the [template][Jekyll-Now], and click "Fork" at the top right corne
 #Step 2: Make it yours
 Now that you have your website up and running, you probably want to change all the information to yours. It's a good idea to make a local copy of the repository first:
 
-```Bash
+```bash
 git clone git@github.com:username/username.github.io.git
 ```
 
-Open the file _config.yml in the root directory of your repository, which contains some global settings of your website.
+Open the file _config.yml in the root directory of your repository, which contains some global settings of your website. In the begining of the file you'll find some informations like your name, the description of the website, and your avatar. You're free to change them. And what's really cool about [Jekyll] is, you can setup links to your social network accounts under the `footer-links` section and things like google analytics.
 
 #Step 3: Post your first blog
 
