@@ -38,12 +38,12 @@ mv 2014-3-3-Hello-World.md 2014-11-5-My-first-blog.md
 
 Open the file with whatever text editor of your choice, and you'll see these lines:
 
-```
+<pre>
 ---
 layout: post
 title: Git rules!
 ---
-```
+</pre>
 
 This is where you configure your blog post, and is called "front-matter" in [Jekyll]. The _layout_ entry tells [Jekyll] to use *_layouts/post.html* as the template of this blog, while the _title_ entry, as you may have already guessed, sets the title. The rest of the file is all yours. Write anything in markdown syntax.
 
