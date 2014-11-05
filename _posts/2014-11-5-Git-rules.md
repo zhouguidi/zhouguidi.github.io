@@ -18,6 +18,7 @@ To do this, the first thing is of course creating a [GitHub] repository (well, t
 Now head for the [template][Jekyll-Now], and click "Fork" at the top right corner of the page. This will make your own copy of the template. Click "settings" in the right panel, change the repository name into _username.github.io_ where _username_ should be changed into your own [GitHub] user name, apparently. This way you have already created your perfectly running website with blogging facilities. Try it under _http://username.github.io_. Be aware, though, that the page might need up to 10 minutes to be built.
 
 #Step 2: Make it yours
+Now that you have your website up and running, you probably want to change all the information to yours. 
 
 #Step 3: Post your first blog
 
