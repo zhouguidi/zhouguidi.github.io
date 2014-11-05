@@ -27,6 +27,7 @@ git clone git@github.com:username/username.github.io.git
 Open the file _config.yml in the root directory of your repository, which contains some global settings of your website. In the begining of the file you'll find some informations like your name, the description of the website, and your avatar. You're free to change them. And what's really cool about [Jekyll] is, you can setup links to your social network accounts under the `footer-links` section and things like google analytics.
 
 #Step 3: Post your first blog
+So far all you see in your website is a sample blog. Time to post your own. Blogs could be written in any of your favorate mark-up language, but I like markdown. Consulte to [this page](https://guides.github.com/features/mastering-markdown/) for a tutorial of the markdown syntax that [GitHub] supports.
 
 #Step 4: Customize it
 
