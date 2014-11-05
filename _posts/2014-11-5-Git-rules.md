@@ -38,7 +38,7 @@ mv 2014-3-3-Hello-World.md 2014-11-5-My-first-blog.md
 
 Open the file with whatever text editor of your choice, and you'll see these lines:
 
-```markdown
+```
 ---
 layout: post
 title: Git rules!
