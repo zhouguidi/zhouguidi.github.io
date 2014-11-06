@@ -20,9 +20,9 @@ Now head for the [template][Jekyll-Now], and click "Fork" at the top right corne
 #Step 2: Make it yours
 Now that you have your website up and running, you probably want to change all the information to yours. It's a good idea to make a local copy of the repository first:
 
-```bash
+{% highlight bash %}
 git clone git@github.com:username/username.github.io.git
-```
+{% endhighlight %}
 
 Open the file _config.yml in the root directory of your repository, which contains some global settings of your website. In the begining of the file you'll find some informations like your name, the description of the website, and your avatar. You're free to change them. And what's really cool about [Jekyll] is, you can setup links to your social network accounts under the `footer-links` section and things like google analytics.
 
@@ -38,22 +38,22 @@ mv 2014-3-3-Hello-World.md 2014-11-5-My-first-blog.md
 
 Open the file with whatever text editor of your choice, and you'll see these lines:
 
-<pre>
+{% highlight yaml %}
 ---
 layout: post
 title: Git rules!
 ---
-</pre>
+{% endhighlight %}
 
 This is where you configure your blog post, and is called "front-matter" in [Jekyll]. The _layout_ entry tells [Jekyll] to use *_layouts/post.html* as the template of this blog, while the _title_ entry, as you may have already guessed, sets the title. The rest of the file is all yours. Write anything in markdown syntax.
 
 After all your changes, don't forget to commit and push to get your website updated:
 
-```bash
+{% highlight bash %}
 git add .
 git commit -m "changed something"
 git push
-```
+{% endhighlight %}
 
 #Step 4: Customize it
 
