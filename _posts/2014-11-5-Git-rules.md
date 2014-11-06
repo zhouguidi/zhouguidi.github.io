@@ -83,6 +83,8 @@ This shows us how to use conditional control flow in [Jekyll] and [Liquid]. In t
 #Conclusion
 I hope I have shown clearly that it's extremly easy to setup a website with blogging facilities under [GitHub], and that it's very easy to customize the site using [Jekyll] and [Liquid]. More advanced customization, however, requires more knowledge and skills of [Jekyll] and [Liquid], but fortunately they are both very easy to learn.
 
+There is something more to keep in mind, though: as free accounts on [GitHub] cannot create private repositories, all your data is visible to the public, so be careful not to put anything private there.
+
 Happy GitHubbing!
 
 [Git]: http://git-scm.com
