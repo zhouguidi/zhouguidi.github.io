@@ -56,16 +56,18 @@ git push
 {% endhighlight %}
 
 #Step 4: Customize it
-So far so good, but what if you want to customize your page style? Let's now dive more into the [Jekyll] structure. Notice there is a `layout: post` entry in the `_config.yml` file, defining the page's template. Then where is the template file? You'll find it under the `_layouts` directory, which by default contains three html files: `default.html`, `page.html`, and `post.html`. In our post file `2014-11-5-My-first-blog.md`, what we do is actually saying that this page should use the `_layouts/post.html` template, providing the text after the second --- to be its content, and defining the variable `title`. When building the site, [Jekyll] will then substitude `{{ content }}` in `_layouts/post.html` by the text of the post file, and `{{ page.title }}` by the title, generating a new static html page. As you might have noticed, other commands could also be used in the syntax of `{{ command }}`, like the `{{ page.date | date: "%B %e, %Y" }}` in `_layouts/post.html`. 
+So far so good, but what if you want to customize your page style? Let's now dive more into the [Jekyll] structure. Notice there is a `layout: post` entry in the `_config.yml` file, defining the page's template. Then where is the template file? You'll find it under the `_layouts` directory, which by default contains three html files: `default.html`, `page.html`, and `post.html`. In our post file `2014-11-5-My-first-blog.md`, what we do is actually saying that this page should use the `_layouts/post.html` template, providing the text after the second --- to be its content, and defining the variable `title`. When building the site, [Jekyll] will then substitude `{{ "{{" }} content }}` in `_layouts/post.html` by the text of the post file, and `{{ "{{" }} page.title }}` by the title, generating a new static html page. As you might have noticed, other commands could also be used in the syntax of `{{ "{{" }} command }}`, like the `{{ "{{" }} page.date | date: "%B %e, %Y" }}` in `_layouts/post.html`. 
 
 In fact, `_layouts/post.html` is itself a "meta" page using another template `default` which is defined by `_layouts/default.html`. This is where the common header and footer are defined. You can hack it to get your site look different, for example by adding another navigation link in the upper right corner, or whatever you want.
 
 Notice the following in the end of `_layouts/default.html`
 
 {% highlight yaml %}
+{% raw %}
 <footer class="footer">
   {% include svg-icons.html %}
 </footer>
+{% endraw %}
 {% endhighlight %}
 
 [Git]: http://git-scm.com
