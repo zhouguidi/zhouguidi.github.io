@@ -31,13 +31,10 @@ So far all you see in your website is a sample blog. Time to post your own. Blog
 
 Browse into the `_post` directory in your repository, and you'll see a file called `2014-3-3-Hello-World.md` which is the sample blog. The naming of the blog files is very important in [Jekyll]: the date as YYYY-M-D, the title of the blog, and the language extension. Rename the sample file to fit your needs:
 
-```bash
-
+{% highlight bash %}
 cd _posts
-
 mv 2014-3-3-Hello-World.md 2014-11-5-My-first-blog.md
-
-```
+{% endhighlight %}
 
 Open the file with whatever text editor of your choice, and you'll see these lines:
 
