@@ -72,21 +72,13 @@ Notice the following in the end of `_layouts/default.html`
 
 which defines the footer by including another page `svg-icons.html`, which lies under `_includes`. This is the way to include another page. The `svg-icons.html` file contains nothing but some lines like
 
-{% highlight yaml %}
-{% raw %}
-{% if site.footer-links.dribbble %}<a href="http://dribbble.com/{{ site.footer-links.dribbble }}">{% include svg-icons/dribbble.html %}</a>{% endif %}
-{% endraw %}
-{% endhighlight %}
-
-This shows us how to use conditional control flow in [Jekyll] and [Liquid]:
-
 {% highlight liquid %}
 {% raw %}
 {% if condition %}content{% endif %}
 {% endraw %}
 {% endhighlight %}
 
-In this case the `condition` is a variable we defined in `_config.yml`: `site.footer-links.dribbble`. Although what we really defined is only `footer-links`, but all the variables defined in `_config.yml` are made children of `site`. The above is to say if `site.footer-links.dribble` is defined, or not empty, then output the contents. In this case the content is a link and the content of another page containing a svg figure. This understood, we can easily add more social network links and logos to the footer. Give it a try.
+This shows us how to use conditional control flow in [Jekyll] and [Liquid]. In this case the `condition` is a variable we defined in `_config.yml`: `site.footer-links.dribbble`. Although what we really defined is only `footer-links`, but all the variables defined in `_config.yml` are made children of `site`. The above is to say if `site.footer-links.dribble` is defined, or not empty, then output the contents. In this case the content is a link and the content of another page containing a svg figure. This understood, we can easily add more social network links and logos to the footer. Give it a try.
 
 #Conclusion
 I hope I have shown clearly that it's extremly easy to setup a website with blogging facilities under [GitHub], and that it's very easy to customize the site using [Jekyll] and [Liquid]. More advanced customization, however, requires more knowledge and skills of [Jekyll] and [Liquid], but fortunately they are both very easy to learn.
