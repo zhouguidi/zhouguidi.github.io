@@ -1,12 +1,21 @@
-          {% if site.footer-links.dribbble %}<a href="http://dribbble.com/{{ site.footer-links.dribbble }}">{% include svg-icons/dribbble.html %}</a>{% endif %}
-          {% if site.footer-links.email %}<a href="mailto:{{ site.footer-links.email }}">{% include svg-icons/email.html %}</a>{% endif %}
-          {% if site.footer-links.facebook %}<a href="http://facebook.com/{{ site.footer-links.facebook }}">{% include svg-icons/facebook.html %}</a>{% endif %}
-          {% if site.footer-links.flickr %}<a href="http://flickr.com/{{ site.footer-links.flickr }}">{% include svg-icons/flickr.html %}</a>{% endif %}
-          {% if site.footer-links.github %}<a href="http://github.com/{{ site.footer-links.github }}">{% include svg-icons/github.html %}</a>{% endif %}
-          {% if site.footer-links.instagram %}<a href="http://instagram.com/{{ site.footer-links.instagram }}">{% include svg-icons/instagram.html %}</a>{% endif %}
-          {% if site.footer-links.linkedin %}<a href="http://linkedin.com/in/{{ site.footer-links.linkedin }}">{% include svg-icons/linkedin.html %}</a>{% endif %}
-          {% if site.footer-links.pinterest %}<a href="http://pinterest.com/{{ site.footer-links.pinterest }}">{% include svg-icons/pinterest.html %}</a>{% endif %}
-          {% if site.footer-links.rss %}<a href="{{ site.baseurl }}/feed.xml">{% include svg-icons/rss.html %}</a>{% endif %}
-          {% if site.footer-links.twitter %}<a href="http://twitter.com/{{ site.footer-links.twitter }}">{% include svg-icons/twitter.html %}</a>{% endif %}
-          {% if site.footer-links.stackoverflow %}<a href="http://stackoverflow.com/{{ site.footer-links.stackoverflow }}">{% include svg-icons/stackoverflow.html %}</a>{% endif %}
-          {% if site.footer-links.qzone %}<a href="http://user.qzone.qq.com/{{ site.footer-links.qzone }}/main">{% include svg-icons/qzone.html %}</a>{% endif %}
+{% if site.footer-links.email %}<a title="Write me an Email" class="footer-icon text-muted" target="_blank" href="mailto:{{ site.footer-links.email }}"><i class="fa fa-envelope"></i></a>{% endif %}
+
+{% if site.footer-links.qq %}<a title="Find me on QQ" class="footer-icon text-muted" target="_blank" href="http://user.qzone.qq.com/{{ site.footer-links.qzone }}/main"><i class="fa fa-qq"></i></a>{% endif %}
+{% if site.footer-links.wechat %}<a title="Find me on WeChat" class="footer-icon text-muted" target="_blank" href=""><i class="fa fa-wechat"></i></a>{% endif %}
+{% if site.footer-links.skype %}<a title="Find me on Skype" class="footer-icon text-muted" target="_blank" href=""><i class="fa fa-skype"></i></a>{% endif %}
+
+{% if site.footer-links.dribbble %}<a title="Find me on Dribbble" class="footer-icon text-muted" target="_blank" href="http://dribbble.com/{{ site.footer-links.dribbble }}"><i class="fa fa-dribbble"></i></a>{% endif %}
+{% if site.footer-links.facebook %}<a title="Find me on Facebook" class="footer-icon text-muted" target="_blank" href="http://facebook.com/{{ site.footer-links.facebook }}"><i class="fa fa-facebook"></i></a>{% endif %}
+{% if site.footer-links.flickr %}<a title="Find me on Flickr" class="footer-icon text-muted" target="_blank" href="http://flickr.com/{{ site.footer-links.flickr }}"><i class="fa fa-flickr"></i></a>{% endif %}
+{% if site.footer-links.github %}<a title="Find me on GitHub" class="footer-icon text-muted" target="_blank" href="http://github.com/{{ site.footer-links.github }}"><i class="fa fa-github"></i></a>{% endif %}
+{% if site.footer-links.instagram %}<a title="Find me on Instagram" class="footer-icon text-muted" target="_blank" href="http://instagram.com/{{ site.footer-links.instagram }}"><i class="fa fa-instagram"></i></a>{% endif %}
+{% if site.footer-links.linkedin %}<a title="Find me on Linkedin" class="footer-icon text-muted" target="_blank" href="http://linkedin.com/in/{{ site.footer-links.linkedin }}"><i class="fa fa-linkedin"></i></a>{% endif %}
+{% if site.footer-links.pinterest %}<a title="Find me on Pinterest" class="footer-icon text-muted" target="_blank" href="http://pinterest.com/{{ site.footer-links.pinterest }}"><i class="fa fa-pinterest"></i></a>{% endif %}
+{% if site.footer-links.twitter %}<a title="Find me on Twitter" class="footer-icon text-muted" target="_blank" href="http://twitter.com/{{ site.footer-links.twitter }}"><i class="fa fa-twitter"></i></a>{% endif %}
+{% if site.footer-links.googleplus %}<a title="Find me on Google+" class="footer-icon text-muted" target="_blank" href="https://plus.google.com/u/1/{{ site.footer-links.googleplus }}"><i class="fa fa-google-plus"></i></a>{% endif %}
+{% if site.footer-links.wordpress %}<a title="Find me on Wordpress" class="footer-icon text-muted" target="_blank" href=""><i class="fa fa-wordpress"></i></a>{% endif %}
+{% if site.footer-links.tencentweibo %}<a title="Find me on Tencent Weibo" class="footer-icon text-muted" target="_blank" href=""><i class="fa fa-tencent-weibo"></i></a>{% endif %}
+{% if site.footer-links.renren %}<a title="Find me on RenRen" class="footer-icon text-muted" target="_blank" href=""><i class="fa fa-renren"></i></a>{% endif %}
+{% if site.footer-links.weibo %}<a title="Find me on Weibo" target="_blank" href=""><i class="fa fa-weibo"></i></a>{% endif %}
+
+{% if site.footer-links.rss %}<a title="Follow this page" class="footer-icon text-muted" target="_blank" href="{{ site.baseurl }}/feed.xml"><i class="fa fa-rss"></i></a>{% endif %}

@@ -5,7 +5,7 @@
 name: Guidi Zhou
 
 # Short bio or description (displayed in the header)
-description: Scientist/Linuxer/Programmer/Web Designer
+description: A Christian/Climate Scientist/Linuxer/Programmer/Web Designer
 
 keywords: 
 copyright: Copyright 2014 Guidi Zhou
@@ -56,7 +56,7 @@ footer-links:
   rss: myrss # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: 
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-#  qzone: 624143919
+  googleplus: 107166973313221200507
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: 

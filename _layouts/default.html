@@ -17,9 +17,8 @@
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
     <link rel="icon" type="image/png" href="images/avatar.jpg">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic'>
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
@@ -27,7 +26,7 @@
 
 <body>
     <!-- Navigation bar -->
-    <div class="navbar navbar-default navbar-fixed-top hidden-print" role="navigation">
+    <div class="navbar navbar-default" role="navigation">
         <div class="container">
             <!-- header -->
             <div class="navbar-header">
@@ -36,33 +35,38 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <!-- brand -->
-                <a class="navbar-brand" href="{{ site.url }}">
-                    <i class="fa fa-leaf"></i>{{ site.name }}
-                </a>
+                <a class="navbar-brand text-primary" href="{{ site.url }}">
+                    <strong><i class="fa fa-leaf"></i><span class="brand"> {{ site.name }}</span></strong>                </a>
             </div>
             <div class="navbar-right navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ site.baseurl }}/blogs" title="My blogs">Blog</a></li>
-                    <li><a href="{{ site.baseurl }}/about" title="About me">About</a></li>
+                    <li><a href="{{ site.baseurl }}" title="Home">Home</a></li>
+                    <li><a href="{{ site.baseurl }}/blogs" title="My Blogs">Blogs</a></li>
+                    <li><a href="{{ site.baseurl }}/projects" title="My projects">Projects</a></li>
+                    <li><a href="{{ site.baseurl }}/publications" title="My Publications">Publications</a></li>
+                    <li><a href="{{ site.baseurl }}/resume" title="My Resume">Resume</a></li>
+                    <li><a href="{{ site.baseurl }}/about" title="About Me">About</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+    <!-- Content -->
+    {{ page.content }}
+
+    <!-- footer -->
+    <div class="footer container-fluid bg-success">    
+        <div class="container text-muted text-center">
+            <div class="icon-area fa fa-2x text-muted">
+                {% include svg-icons.html %}
+            </div>
+            <div>
+                <a class="copyright text-muted" href="#"><i class="fa fa-copyright"></i> 2014 by Guidi Zhou.</a>
+            </div>
+        </div>
     </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>
