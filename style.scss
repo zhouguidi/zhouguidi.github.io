@@ -7,6 +7,15 @@
 @import "_variables";
 // Syntax highlighting @import is at the bottom of this file
 
+//
+.navbar {
+    margin-bottom: 0;
+    font-size: large;
+}
+
+.navbar-brand {
+    font-weight: bold;
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "_highlights";
