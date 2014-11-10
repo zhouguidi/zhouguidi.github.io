@@ -1,12 +1,72 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html {% if page.lang %}lang="{{ page.lang }}"{% endif %}>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-<article class="page">
-  
-  <h1>{{ page.title }}</h1>
+    <meta name="author" content="{{ site.name }}">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="copyright" content="{{ site.copyright }}">
 
-  <div class="entry">
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <link rel="icon" type="image/png" href="images/phd-zhou-square.jpg">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
+
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- header -->
+            <div class="navbar-header">
+                <!-- toggle -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- brand -->
+                <a class="navbar-brand text-primary" href="{{ site.url }}">
+                    <strong><i class="fa fa-leaf"></i><span class="brand"> {{ site.name }}</span></strong>                </a>
+            </div>
+            <div class="navbar-right navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ site.baseurl }}" title="Home">Home</a></li>
+                    <li><a href="{{ site.baseurl }}/blogs" title="My Blogs">Blogs</a></li>
+                    <li><a href="{{ site.baseurl }}/projects" title="My projects">Projects</a></li>
+                    <li><a href="{{ site.baseurl }}/publications" title="My Publications">Publications</a></li>
+                    <li><a href="{{ site.baseurl }}/resume" title="My Resume">Resume</a></li>
+                    <li><a href="{{ site.baseurl }}/about" title="About Me">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
     {{ content }}
-  </div>
-</article>
+
+    <!-- footer -->
+    <div class="footer container-fluid bg-success">    
+        <div class="container text-muted text-center">
+            <div class="icon-area fa fa-2x text-muted">
+                {% include svg-icons.html %}
+            </div>
+            <div>
+                <a class="copyright text-muted" href="{{ site.baseurl }}/copyright"><i class="fa fa-copyright"></i> 2014 by Guidi Zhou.</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
