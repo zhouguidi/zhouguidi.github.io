@@ -24,26 +24,21 @@ baseurl: ""
 ##################################################################
 #                     Default Configurations
 ##################################################################
-#defaults:
-#    -
-#        scope:
-#            path: ""
-#        values:
-#            type: "default"
-#    -
-#        scope:
-#            path: ""
-#            type: "posts"
-#        values:
-#            layout: "post"
-#            author: "Guidi Zhou"
-#    -
-#        scope:
-#            path: ""
-#            type: "pages"
-#        values:
-#            layout: "page"
-#            author: "Guidi Zhou"
+defaults:
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"
+            author: "Guidi Zhou"
+    -
+        scope:
+            path: ""
+            type: "pages"
+        values:
+            layout: "page"
+            author: "Guidi Zhou"
 
 ##################################################################
 #                     Social Configurations
