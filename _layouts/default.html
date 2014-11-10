@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}">
+<html {% if page.lang %}lang="{{ page.lang }}"{% endif %}>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
-    <meta name="author" content="{{ site.name }}" />
+    <meta name="author" content="{{ site.name }}">
     <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="">
+    <meta name="copyright" content="">
 
     <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <link rel="icon" type="image/jpeg" href="">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic'>
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
 
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
   </head>
 
   <body>
