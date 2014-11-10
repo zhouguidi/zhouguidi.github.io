@@ -1,5 +1,9 @@
 ---
 title: How to setup GitHub website and blog
+category: web-development
+tags: [it, web, github, jekyll, liquid, yaml]
+date: 2014-11-5
+moddate: 2014-11-10
 ---
 
 > _Git is awesome, GitHub is awesome, and Jekyll is awesome!_
