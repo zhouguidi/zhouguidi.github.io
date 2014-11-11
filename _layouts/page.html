@@ -35,17 +35,17 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <!-- brand -->
-                <a class="navbar-brand text-primary" href="{{ site.url }}">
-                    <strong><i class="fa fa-leaf"></i><span class="brand"> {{ site.name }}</span></strong>                </a>
+                <a class="navbar-brand text-primary" href="{{ site.baseurl }}/">
+                    <strong><i class="fa fa-leaf"></i><span class="brand"> {{ site.name }}</span></strong>
+                </a>
             </div>
             <div class="navbar-right navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li id="nav-item-home"><a href="{{ site.baseurl }}/" title="Home">Home</a></li>
-                    <li id="nav-item-blogs"><a href="{{ site.baseurl }}/blogs" title="My Blogs">Blogs</a></li>
-                    <li id="nav-item-projects"><a href="{{ site.baseurl }}/projects" title="My projects">Projects</a></li>
-                    <li id="nav-item-publications"><a href="{{ site.baseurl }}/publications" title="My Publications">Publications</a></li>
-                    <li id="nav-item-resume"><a href="{{ site.baseurl }}/resume" title="My Resume">Resume</a></li>
-                    <li id="nav-item-about"><a href="{{ site.baseurl }}/about" title="About Me">About</a></li>
+                    <li {% if page.belongs == "blogs" %}class="active"{% endif %}><a href="{{ site.baseurl }}/blogs" title="My Blogs">Blogs</a></li>
+                    <li {% if page.belongs == "projects" %}class="active"{% endif %}><a href="{{ site.baseurl }}/projects" title="My projects">Projects</a></li>
+                    <li {% if page.belongs == "publications" %}class="active"{% endif %}><a href="{{ site.baseurl }}/publications" title="My Publications">Publications</a></li>
+                    <li {% if page.belongs == "resume" %}class="active"{% endif %}><a href="{{ site.baseurl }}/resume" title="My Resume">Resume</a></li>
+                    <li {% if page.belongs == "about" %}class="active"{% endif %}><a href="{{ site.baseurl }}/about" title="About Me">About</a></li>
                 </ul>
             </div>
         </div>
@@ -60,7 +60,19 @@
             <div class="icon-area fa fa-2x text-muted">
                 {% include svg-icons.html %}
             </div>
-            <div>
+            <div class="poweredby">
+                Powered by:
+                <ul class="list-inline">
+                    <li><a class="text-muted" href="">GitHub Pages</a></li>
+                    <li><a class="text-muted" href="http://jekyllrb.com/">Jekyll</a></li>
+                    <li><a class="text-muted" href="http://liquidmarkup.org/">Liquid</a></li>
+                    <li><a class="text-muted" href="http://www.yaml.org/">YAML</a></li>
+                    <li><a class="text-muted" href="http://kramdown.gettalong.org/index.html">Kramdown</a></li>
+                    <li><a class="text-muted" href="http://pygments.org/">Pygments</a></li>
+                    <li><a class="text-muted" href="https://disqus.com">DISQUS</a></li>
+                </ul>
+            </div>
+            <div class="lastrow">
                 <a class="copyright text-muted" href="{{ site.baseurl }}/copyright"><i class="fa fa-copyright"></i> 2014 by Guidi Zhou.</a>
             </div>
         </div>

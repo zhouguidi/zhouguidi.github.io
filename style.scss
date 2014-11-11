@@ -31,9 +31,9 @@ body {
     box-shadow: 0 0 6px 3px darkgreen;
 }
 
-.navbar-right a:hover {
+.navbar-right a:hover, .navbar-right .active a {
     border-bottom: 1px solid green;
-    font-weight: bold;
+    color: green !important;
 }
 
 .row-thumbs {
@@ -62,7 +62,12 @@ body {
     padding-right: 0.2em;
 }
 
-.copyright {
+.poweredby {
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+}
+
+.lastrow {
     padding-top: 2em;
     padding-bottom: 1em;
 }
@@ -74,8 +79,30 @@ a:hover {
 
 // post
 .post {
-    padding-top: 4em;
+    padding-top: 5em;
     padding-bottom: 4em;
+}
+
+.post header {
+}
+
+.post .timelab {
+    margin: 0;
+    padding-top: 1em;
+}
+
+.post .tags {
+    padding-top:0.5em;
+    padding-bottom: 3em;
+}
+
+.post .entry {
+    padding-top: 1em;
+}
+
+.comments {
+    padding-top: 6em;
+    padding-bottom: 2em;
 }
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

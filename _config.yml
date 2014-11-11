@@ -5,13 +5,10 @@
 name: Guidi Zhou
 
 # Short bio or description (displayed in the header)
-description: A Christian/Climate Scientist/Linuxer/Programmer/Web Designer
+description: A Climate Scientist/Linuxer/Programmer/Web Designer
 
 keywords: 
 copyright: Copyright 2014 Guidi Zhou
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/zhouguidi/zhouguidi.github.io/master/images/avatar.jpg
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
@@ -59,17 +56,17 @@ footer-links:
   googleplus: 107166973313221200507
 
 # Your disqus shortname, entering this will enable commenting on posts
-disqus: 
+disqus: zhouguidi
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: 
+google_analytics: UA-56617299-1
 
 ##################################################################
 #                     Site Configurations
 ##################################################################
 markdown: kramdown
 highlighter: pygments
-permalink: /:title/
+permalink: /blogs/:title/
 
 # Time Zone
 timezone: Europe/Berlin

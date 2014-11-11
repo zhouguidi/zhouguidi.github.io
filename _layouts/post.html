@@ -1,21 +1,26 @@
 ---
 layout: page
+belongs: blogs
 ---
 
     <div class="container-fluid">
         <div class="container">
             <article class="post">
-              <h1>{{ page.title }}</h1>
-              <p class="tags">Category: {{ page.category }}</p>
-              <p class="tags">Tags: {{ page.tags }}</p>
+                <header class="text-center">
+                    <h2>{{ page.title }}</h2>
+                    <div class="timelab lead">
+                      Created: {{ page.date | date: "%b %e, %Y" }}
+                      {% if page.moddate %}; Updated: {{ page.moddate | date: "%b %e, %Y" }}{% endif %}
+                    </div>
+                    <div class="tags lead">
+                      {% for tag in page.tags %}
+                      <span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span>
+                      {% endfor %}
+                    </div>
+              </header>
 
-              <div class="entry">
+              <div class="entry lead">
                 {{ content }}
-              </div>
-
-              <div class="date">
-                  Written on {{ page.date | date: "%B %e, %Y" }}
-                  {% if page.moddate %}; Last modified on {{ page.moddate | date: "%B %e, %Y" }} {% endif %}
               </div>
 
               {% include disqus.html disqus_identifier=page.disqus_identifier %}
