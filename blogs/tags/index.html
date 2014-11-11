@@ -1,0 +1,23 @@
+---
+belongs: blogs
+---
+
+    <div class="container-fluid">
+        <div class="container text-center">
+            <div class="page-header text-center">
+                <h1>Tag Cloud</h1>
+            </div>
+
+            <div class="col-xs-0 col-sm-2 col-md-3">
+            </div>
+            <div class="tagcloud col-xs-12 col-sm-8 col-md-6 text-center">
+                <ul class="list-inline">
+                    {% for tag in site.tags %}
+                    <li style="font-size: {{ tag[1] | size | times:100 | divided_by:site.tags.size | plus:70 }}%"><a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag[0] }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag[0] }}</span></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-xs-0 col-sm-2 col-md-3">
+            </div>
+        </div>
+    </div>
