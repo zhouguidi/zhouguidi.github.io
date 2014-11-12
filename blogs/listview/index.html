@@ -1,0 +1,173 @@
+---
+belongs: blogs
+---
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="page-header text-center">
+                <h1>Blog List</h1>
+            </div>
+
+            <br />
+            <ul class="list-inline text-center">
+                <li class="h5"><a href="{{ site.baseurl }}/blogs/"><i class="fa fa-tasks"></i> Block View</a></li>
+                <li class="divider"></li>
+                <li class="divider"></li>
+                <li class="h5"><a href="{{ site.baseurl }}/blogs/tags/"><i class="fa fa-cloud"></i> Tag Could</a></li>
+            </ul>
+
+            <form class="form-filter form-inline" role="form">
+                <div class="form-group col-xs-12">
+                    <input id="input-tags" type="text" class="col-xs-7 col-sm-2 form-control" placeholder="tags to filter">
+                    <select id="input-policy" class="col-xs-2 form-control">
+                        <option selected="selected">or</option>
+                        <option>and</option>
+                    </select>
+                    <input id="input-start-date" type="date" class="col-xs-4 col-sm-1 form-control" placeholder="start date">
+                    <input id="input-end-date" type="date" class="col-xs-4 col-sm-1 form-control" placeholder="end date">
+                    <button id="button-clear" type="button" class="btn btn-sm btn-default" style="float: right">
+                        <span class="fa-stack fa-sm" style="color: red">
+                            <i class="fa fa-close fa-stack-1x"></i>
+                            <i class="fa fa-circle-o fa-stack-2x"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+            <p id="error-text" class="text-danger"></p>
+
+            <div class="posts-list">
+                <table id="posttable" class="table table-striped table-hover tablesorter">
+                    <thead>
+                        <tr>
+                            <th class="td-posttitle"><h5>Title</h5></th>
+                            <th class="td-postdate"><h5>Date</h5></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in site.posts %}
+                            <tr class="post-list" data-tags="{{ post.tags | join:" " }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+                                <td class="td-posttitle">
+                                    <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncate:70,"..." }}</a></h5>
+                                    <ul class="small list-inline">
+                                        {% for tag in post.tags %}
+                                            <li><a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td class="td-postdate">
+                                    <h5>{{ post.date | date: "%Y-%m-%d" }}</h5>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.18.3/css/theme.blue.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.css">
+    <style>
+        .form-control {
+            border: 1px solid LightGray;
+        }
+
+        input, select {
+            font-weight: normal;
+        }
+
+        .small {
+            font-size: 80%;
+        }
+
+        td h5 {
+            margin: 0;
+        }
+
+        ul.list-inline {
+            margin: 0;
+        }
+
+        .list-inline >li {
+            padding: 0;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#posttable").tablesorter({theme: "blue", sortList: [[1, 1]]});
+            $("#input-tags").bind("input change", function(){filter("tags")}).trigger("input");
+            $("#input-policy").bind("input change", function(){filter("policy")}).trigger("input");
+            $("#input-start-date").bind("input change", function(){filter("start-date")}).trigger("input");
+            $("#input-end-date").bind("input change", function(){filter("end-date")}).trigger("input");
+            $("#button-clear").click(function(){
+                $("#input-tags").val("");
+                $("#input-start-date").val("");
+                $("#input-end-date").val("");
+                filter();
+            }).click();
+        });
+
+        $(function() {
+            if (!Modernizr.inputtypes['date']) {
+                $('input[type=date]').datepicker({
+                    dateFormat: 'yy-mm-dd'
+                });
+            }
+        });
+
+        function filter(origin) {
+            console.log(origin+":"+$("#input-"+origin).val());
+            var tags = $("#input-tags").val().split(/[ ,;]/g).filter(Boolean);
+            var startdate = Date.parse($("#input-start-date").val());
+            var enddate = Date.parse($("#input-end-date").val());
+            var policy = tags.length == 1 ? "or" : $("#input-policy").val();
+            
+            $("#error-text").html("");
+            if (startdate > enddate)
+                $("#error-text").html("start date is later than end date")
+
+            if ($.trim($("#input-start-date").val()) != "" && isNaN(startdate))
+                $("#error-text").html("invalid start date")
+
+            if ($.trim($("#input-end-date").val()) != "" && isNaN(enddate))
+                $("#error-text").html("invalid end date")
+
+            $("tr.post-list").each(function() {
+                var thistags = $(this).data("tags").split(/[ ,;]/g).filter(Boolean);
+                var tagsel = false;
+                var sel = false;
+                if (tags.length == 0 || tags.length == 1 && tags[0] == "")
+                    tagsel = true
+                else
+                    if (policy == "or") {
+                        var re = new RegExp("^(" + tags.join("|") + ")", "i");
+                        tagsel = $.inArray(true, $.map(thistags, function(t) { return re.test(t); })) != -1;
+                    } else {
+                        var regs = $.map(tags, function(t) { return new RegExp("^" + t, "i"); });
+                        tagsel = $.inArray(false, $.map(regs, function(r) {
+                            return $.inArray(true, $.map(thistags, function(t) { return r.test(t); })) != -1;
+                        })) == -1;
+                    }
+                if (tagsel) {
+                    var thisdate = Date.parse($(this).data("date"));
+                    var later = false;
+                    var earlier = false;
+                    if (!isNaN(thisdate)) {
+                        later = isNaN(startdate) ? true : thisdate >= startdate;
+                        earlier = isNaN(enddate) ? true : thisdate <= enddate;
+                    }
+                    if (later && earlier)
+                        sel = true;
+                }
+                if (sel)
+                    $(this).show();
+                else
+                    $(this).hide();
+            });
+
+            anchor_bottom();
+        }
+    </script>

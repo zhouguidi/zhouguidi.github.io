@@ -22,7 +22,7 @@
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 
@@ -80,10 +80,11 @@
                     <li><a class="text-muted" href="https://pages.github.com/">GitHub Pages</a></li>
                     <li><a class="text-muted" href="http://jekyllrb.com/">Jekyll</a></li>
                     <li><a class="text-muted" href="http://liquidmarkup.org/">Liquid</a></li>
-                    <li><a class="text-muted" href="http://www.yaml.org/">YAML</a></li>
                     <li><a class="text-muted" href="http://kramdown.gettalong.org/index.html">Kramdown</a></li>
                     <li><a class="text-muted" href="http://pygments.org/">Pygments</a></li>
                     <li><a class="text-muted" href="http://getbootstrap.com/">Bootstrap</a></li>
+                    <li><a class="text-muted" href="http://jquery.com/">JQuery</a></li>
+                    <li><a class="text-muted" href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a></li>
                     <li><a class="text-muted" href="https://disqus.com">DISQUS</a></li>
                 </ul>
             </div>
@@ -106,8 +107,15 @@
             $("#searchbutton").mouseleave(function() {
                 if ($("#searchinput").val() == "" )
                     $("#searchinput").hide();
+
             });
+
+            anchor_bottom();
         });
+        function anchor_bottom() {
+            if ($(document).height() <= $(window).height())
+                $(".footer").css("position", "absolute").css("bottom", "0").css("left", "0").css("right", "0");
+        }
     </script>
 
     {% include analytics.html %}

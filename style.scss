@@ -87,6 +87,10 @@ a:hover {
     font-size: inherit;
 }
 
+a.taglink:hover {
+    text-decoration: none;
+}
+
 .comments {
     padding-top: 6em;
     padding-bottom: 2em;
@@ -114,18 +118,18 @@ a:hover {
 }
 
 //posts
-.posts {
+.posts-block {
     padding-top: 2em;
     padding-bottom: 6em;
 }
 
-.posts .post {
-    padding-top: 3em;
-    padding-bottom: 1em;
+.postitem-block {
+    padding-top: 0;
+    padding-bottom: 0;
 
     header {
         display: block;
-        padding-top: 0.2em;
+        padding-top: 0.4em;
     }
 
     header:after {
@@ -144,14 +148,34 @@ a:hover {
         margin: 0;
     }
 
-    h3 {
-        padding-top: 0.5em;
-    }
-
     blockquote {
         margin: 0;
     }
 }
+
+.form-filter {
+    padding-top: 4em;
+    padding-bottom: 1em;
+}
+
+.posts-list {
+    padding-top: 2em;
+    padding-bottom: 6em;
+    clear: both;
+}
+
+.td-posttitle {
+    width: 85%;
+}
+
+.td-postdate {
+    width: 15%;
+
+    h5 {
+        vertical-align: middle;
+    }
+}
+
 
 //
 .pager{
