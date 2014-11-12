@@ -18,14 +18,14 @@ belongs: blogs
 
             <form class="form-filter form-inline" role="form">
                 <div class="form-group col-xs-12">
-                    <input id="input-tags" type="text" class="col-xs-7 col-sm-2 form-control" placeholder="tags to filter">
-                    <select id="input-policy" class="col-xs-2 form-control">
+                    <input id="input-tags" type="text" class="col-xs-7 col-sm-2 form-control" placeholder="tags to filter" title="input tags to filter">
+                    <select id="input-policy" class="col-xs-2 form-control" title="match any or all the tags?">
                         <option selected="selected">or</option>
                         <option>and</option>
                     </select>
-                    <input id="input-start-date" type="date" class="col-xs-4 col-sm-1 form-control" placeholder="start date">
-                    <input id="input-end-date" type="date" class="col-xs-4 col-sm-1 form-control" placeholder="end date">
-                    <button id="button-clear" type="button" class="btn btn-sm btn-default" style="float: right">
+                    <input id="input-start-date" type="date" class="col-xs-4 col-sm-1 form-control" placeholder="start date" title="created since when?">
+                    <input id="input-end-date" type="date" class="col-xs-4 col-sm-1 form-control" placeholder="end date" title="created until when?">
+                    <button id="button-clear" type="button" class="btn btn-sm btn-default" title="clear filtering">
                         <span class="fa-stack fa-sm" style="color: red">
                             <i class="fa fa-close fa-stack-1x"></i>
                             <i class="fa fa-circle-o fa-stack-2x"></i>

@@ -9,7 +9,13 @@ belongs: blogs
             </div>
 
             <br />
-            <h4><a href="{{ site.baseurl }}/blogs/tags/"><i class="fa fa-cloud"></i> See the Tag Could</a></h4>
+            <ul class="list-inline text-center">
+                <li class="h5"><a href="{{ site.baseurl }}/blogs/"><i class="fa fa-tasks"></i> Block View</a></li>
+                <li class="divider"></li>
+                <li class="h5"><a href="{{ site.baseurl }}/blogs/listview/"><i class="fa fa-list"></i> List View</a></li>
+                <li class="divider"></li>
+                <li class="h5"><a href="{{ site.baseurl }}/blogs/tags/"><i class="fa fa-cloud"></i> Tag Could</a></li>
+            </ul>
 
             <div class="posts">
                 {% for post in site.tags.Tutorial %}
