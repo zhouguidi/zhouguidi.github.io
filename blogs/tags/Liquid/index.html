@@ -9,19 +9,19 @@ belongs: blogs
             </div>
 
             <br />
-            <h6><a href="{{ site.baseurl }}tags/"><i class="fa fa-cloud"></i> View Tag Could</a></h6>
+            <h6><a href="{{ site.baseurl }}/blogs/tags/"><i class="fa fa-cloud"></i> View Tag Could</a></h6>
 
             <div class="posts">
                 {% for post in site.tags.Liquid %}
                     <article class="post">    
-                        <h3>{{ foorloop.index }}<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
                         <blockquote>
                             <p>{{ post.content | truncatewords:40 | escape_once | strip_html }} </p><span>&hellip;</span> 
                         </blockquote>
                         <header>
                             <div class="tags">
                                 {% for tag in post.tags %}
-                                <a class="taglink" href="{{ site.baseurl }}tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a>
+                                <a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a>
                                 {% endfor %}
                             </div>
                             <div class="timelab">
