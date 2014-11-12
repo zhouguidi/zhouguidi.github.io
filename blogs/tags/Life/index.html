@@ -17,25 +17,33 @@ belongs: blogs
                 <li class="h5"><a href="{{ site.baseurl }}/blogs/tags/"><i class="fa fa-cloud"></i> Tag Could</a></li>
             </ul>
 
-            <div class="posts">
-                {% for post in site.tags.Life %}
-                    <article class="post">    
-                        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-                        <blockquote>
-                            <p>{{ post.content | truncatewords:40 | escape_once | strip_html }} </p><span>&hellip;</span> 
-                        </blockquote>
-                        <header>
-                            <div class="tags">
-                                {% for tag in post.tags %}
-                                <a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a>
-                                {% endfor %}
-                            </div>
-                            <div class="timelab">
-                                {{ post.date | date: "%B %e, %Y" }}
-                            </div>
-                        </header>
-                    </article>
-                {% endfor %}
+            <div class="posts-block">
+                <table class="table table-striped table-hover">
+                    <tbody>
+                        {% for post in site.tags.Life %}
+                            <tr>
+                                <td>
+                                    <article class="postitem-block">
+                                        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+                                        <blockquote>
+                                            <p>{{ post.content | truncatewords:40 | escape_once | strip_html }} </p>
+                                        </blockquote>
+                                        <header>
+                                            <div class="tags">
+                                                {% for tag in post.tags %}
+                                                    <a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="timelab">
+                                                {{ post.date | date: "%B %e, %Y" }}
+                                            </div>
+                                        </header>
+                                    </article>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
