@@ -1,0 +1,77 @@
+//
+// blog-list related stylesheet
+//
+
+//
+@import "label.scss";
+
+// block view
+.posts-block {
+    padding-top: 2em;
+    padding-bottom: 6em;
+}
+
+.postitem-block {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    header {
+        display: block;
+        padding-top: 0.4em;
+    }
+
+    header:after {
+        clear: both;
+    }
+
+    .timelab {
+        float: right;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tags {
+        float: left;
+        padding: 0;
+        margin: 0;
+    }
+
+    blockquote {
+        margin: 0;
+    }
+}
+
+.pager{
+    padding-bottom: 2em;
+}
+
+// list view 
+.posts-list {
+    padding-top: 2em;
+    padding-bottom: 6em;
+    clear: both;
+}
+
+.td-posttitle {
+    width: 85%;
+}
+
+.td-postdate {
+    width: 15%;
+
+    h5 {
+        vertical-align: middle;
+    }
+}
+
+.form-filter {
+    padding-top: 4em;
+    padding-bottom: 1em;
+}
+
+// tag cloud
+.tagcloud {
+    font-size: 2em;
+    padding-top: 2em;
+    padding-bottom: 4em;
+}

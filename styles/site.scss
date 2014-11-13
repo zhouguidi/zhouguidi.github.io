@@ -1,0 +1,63 @@
+//
+// global stylesheet used by every page
+//
+
+// make container narrower
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    font-family: $roboto;
+}
+
+.navbar {
+    margin: 0;
+}
+
+.navbar-right a:hover, .navbar-right .active a {
+    border-bottom: 1px solid green;
+    color: green !important;
+}
+
+a:hover {
+    color: green !important;
+}
+
+.lead a {
+    font-size: inherit;
+}
+
+.footer .container {
+    padding-top: 3em;
+    padding-bottom: 4em;
+}
+
+.icon-area {
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+
+.footer-icon {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+.poweredby {
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+}
+
+.lastrow {
+    padding-top: 2em;
+    padding-bottom: 1em;
+}

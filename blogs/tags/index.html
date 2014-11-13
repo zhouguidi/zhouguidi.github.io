@@ -1,14 +1,18 @@
 ---
 belongs: blogs
 ---
+    <!-- page-specific stylesheets -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles/blogs.css">
 
     <div class="container-fluid">
         <div class="container text-center">
+            <!-- page header -->
             <div class="page-header text-center">
                 <h1>Tag Cloud</h1>
             </div>
 
             <br />
+            <!-- jumps -->
             <ul class="list-inline text-center">
                 <li class="h5"><a href="{{ site.baseurl }}/blogs/"><i class="fa fa-tasks"></i> Block View</a></li>
                 <li class="divider"></li>
@@ -18,6 +22,7 @@ belongs: blogs
 
             <div class="col-xs-0 col-sm-2 col-md-3">
             </div>
+            <!-- tag cloud -->
             <div class="tagcloud col-xs-12 col-sm-8 col-md-6 text-center">
                 <ul class="list-inline">
                     {% for tag in site.tags %}

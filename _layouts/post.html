@@ -2,15 +2,21 @@
 layout: page
 belongs: blogs
 ---
+    <!-- page-specific stylesheets -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles/blog.css">
 
     <div class="container-fluid">
         <div class="container">
             <article class="post">
+                <!-- header -->
                 <header class="text-center">
+                    <!-- title -->
                     <h2>{{ page.title }}</h2>
+                    <!-- timestamp -->
                     <div class="timelab lead">
                       {{ page.date | date: "%B %e, %Y" }}
                     </div>
+                    <!-- tags -->
                     <div class="tags lead">
                       {% for tag in page.tags %}
                       <a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a>
@@ -18,17 +24,21 @@ belongs: blogs
                     </div>
                   </header>
 
+                  <!-- post content -->
                   <div class="entry lead">
                     {{ content }}
                   </div>
 
                 {% if page.moddate %}
-                    <div class="timelab lead">
-                        Last Update: {{ page.moddate | date: "%B %e, %Y" }}
-                    </div>
+                <!-- update timestamp -->
+                <div class="timelab lead">
+                    Last Update: {{ page.moddate | date: "%B %e, %Y" }}
+                </div>
                 {% endif %}
 
+                <!-- disqus begins -->
                 {% include disqus.html disqus_identifier=page.disqus_identifier %}
+                <!-- disqus ends -->
             </article>
         </div>
     </div>

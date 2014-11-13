@@ -1,7 +1,7 @@
 dt = $(shell date)
 build:
 	jekyll build
-	./page_per_tag.sh
+	./tools/page_per_tag.sh
 	jekyll build
 
 publish:

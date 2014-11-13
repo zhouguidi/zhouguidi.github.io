@@ -1,0 +1,11 @@
+//
+// code related stylesheet
+//
+
+pre code {
+    font-size: 1em;
+}
+
+// syntax highlighing -- begins
+@import "highlights";
+// syntax highlighing -- ends

@@ -1,0 +1,32 @@
+//
+// stylesheet for a single blog
+//
+
+//
+@import "label.scss";
+@import "code.scss";
+
+.comments {
+    padding-top: 6em;
+    padding-bottom: 2em;
+}
+
+// post
+.post {
+    padding-top: 5em;
+    padding-bottom: 4em;
+
+    .timelab {
+        margin: 0;
+        padding-top: 1em;
+    }
+
+    .tags {
+        padding-top:0.5em;
+        padding-bottom: 3em;
+    }
+
+    .entry {
+        padding-top: 1em;
+    }
+}

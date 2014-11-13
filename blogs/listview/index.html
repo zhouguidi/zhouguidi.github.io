@@ -1,14 +1,18 @@
 ---
 belongs: blogs
 ---
+    <!-- page-specific stylesheets -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/styles/blogs.css">
 
     <div class="container-fluid">
         <div class="container">
+            <!-- page header -->
             <div class="page-header text-center">
                 <h1>Blog List</h1>
             </div>
 
             <br />
+            <!-- jumps -->
             <ul class="list-inline text-center">
                 <li class="h5"><a href="{{ site.baseurl }}/blogs/"><i class="fa fa-tasks"></i> Block View</a></li>
                 <li class="divider"></li>
@@ -16,6 +20,7 @@ belongs: blogs
                 <li class="h5"><a href="{{ site.baseurl }}/blogs/tags/"><i class="fa fa-cloud"></i> Tag Could</a></li>
             </ul>
 
+            <!-- filter form -->
             <form class="form-filter form-inline" role="form">
                 <div class="form-group col-xs-12">
                     <input id="input-tags" type="text" class="col-xs-7 col-sm-2 form-control" placeholder="tags to filter" title="input tags to filter">
@@ -35,8 +40,10 @@ belongs: blogs
             </form>
             <p id="error-text" class="text-danger"></p>
 
+            <!-- list of posts: a table using jquery.tablesorter -->
             <div class="posts-list">
                 <table id="posttable" class="table table-striped table-hover tablesorter">
+                    <!-- header -->
                     <thead>
                         <tr>
                             <th class="td-posttitle"><h5>Title</h5></th>
@@ -45,19 +52,22 @@ belongs: blogs
                     </thead>
                     <tbody>
                         {% for post in site.posts %}
-                            <tr class="post-list" data-tags="{{ post.tags | join:" " }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
-                                <td class="td-posttitle">
-                                    <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncate:70,"..." }}</a></h5>
-                                    <ul class="small list-inline">
-                                        {% for tag in post.tags %}
-                                            <li><a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a></li>
-                                        {% endfor %}
-                                    </ul>
-                                </td>
-                                <td class="td-postdate">
-                                    <h5>{{ post.date | date: "%Y-%m-%d" }}</h5>
-                                </td>
-                            </tr>
+                        <!-- a post -->
+                        <tr class="post-list" data-tags="{{ post.tags | join:" " }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+                            <!-- title and tags -->
+                            <td class="td-posttitle">
+                                <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | truncate:70,"..." }}</a></h5>
+                                <ul class="small list-inline">
+                                    {% for tag in post.tags %}
+                                        <li><a class="taglink" href="{{ site.baseurl }}/blogs/tags/{{ tag }}/"><span class="label label-{% cycle 'primary', 'success', 'warning', 'danger' %}">{{ tag }}</span></a></li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <!-- timestamp -->
+                            <td class="td-postdate">
+                                <h5>{{ post.date | date: "%Y-%m-%d" }}</h5>
+                            </td>
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>
