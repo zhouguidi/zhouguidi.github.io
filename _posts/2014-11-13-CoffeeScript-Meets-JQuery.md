@@ -3,47 +3,46 @@ title: When CoffeeScript Meets JQuery
 tags: [Note, Programming, CoffeeScript, JQuery]
 ---
 
-This is a note from Stefan Buhrmester's blog ["How CoffeeScript makes jQuery more fun than ever"](http://buhrmi.tumblr.com/post/5371876452/how-coffeescript-makes-jquery-more-fun-than-ever) which offers an interesting guide through the beauty of both CoffeeScript and JQuery. While the outline of the content and all the examples are taken from there, I added some points which I think worth mentioning.
+This is a note from Stefan Buhrmester's blog ["How CoffeeScript makes jQuery more fun than ever"](http://buhrmi.tumblr.com/post/5371876452/how-coffeescript-makes-jquery-more-fun-than-ever) which offers an interesting guide through the beauty of both CoffeeScript and JQuery. While the outline of the content and most of the examples are taken from there, I added some points which I think worth mentioning and added something not obvious in the origional article.
 
 > When I first started to work with jQuery a couple of years ago it felt as if I reached programmer heaven. ... Enter CoffeeScript. It’s the same story all over again and is just as addictive. 
 > -- Stefan Buhrmester
 
 ### Iterate like a boss
-With CoffeeScript, there's no need to write 
+With CoffeeScript, where we previously have to write 
 
 {% highlight javascript %}
 {% raw %}
-$(".class").each(function() {...})
+$(".li").each(function() {
+    $(".div").append($(this).val());
+});
 {% endraw %}
 {% endhighlight %}
 
-again. Now it's just as easy as
+we now can write as easy as
 
 {% highlight coffeescript %}
 {% raw %}
-formValues = (elem.value for elem in $('.input'))
+for li in $(".li")
+    $(".div").append($(li).val())
 {% endraw %}
 {% endhighlight %}
 
-and you get the extra gains of collecting the results into an array. The above Coffee code compiles into the following Javascript:
+The above Coffee code compiles into the following Javascript:
 
 {% highlight javascript %}
 {% raw %}
-var elem, formValues;
-formValues = (function() {
-    var _i, _len, _ref, _results;
-    _ref = $('.input');
-    _results = [];
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        elem = _ref[_i];
-        _results.push(elem.value);
-    }
-    return _results;
-})();
+var li, _i, _len, _ref;
+
+_ref = $(".li");
+for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+    li = _ref[_i];
+    $(".div").append($(li).val());
+}
 {% endraw %}
 {% endhighlight %}
 
-which, when compared to the lucid Coffee code, looks more like junk.
+which, when compared to the lucid Coffee code, looks more like junk. Note that in the above Coffee code, we still have to surround the `h3` object by `$()`, as we did before. As is obvious in the compiled code, inside the loop it actually makes a `[_i]` call to the jQuery selecter result, which will return a DOM element, so we have to pass it to `$()` again to make it a jQuery object.
 
 ### Bind methods on the fly
 Binding a method to an object becomes as easy as this:
@@ -89,7 +88,7 @@ With CoffeeScript this becomes
 
 {% highlight coffeescript %}
 {% raw %}
-$->
+$ ->
     some()
     init()
     calls()
@@ -97,6 +96,8 @@ $->
 {% endhighlight %}
 
 Isn't that beautiful?
+
+Notice the space in the first line, though. This line means call funtion `$` with an anonymous function as its input, but if you miss the space, it means nothing than an error.
 
 ### More
 I'm sure there are more cheering combinations of the two tools. After finish reading [CoffeeScript: Accelerated JavaScript Development](https://pragprog.com/book/tbcoffee/coffeescript), I think I'm definately gonna write something.
