@@ -10,9 +10,18 @@
 @import "label.scss";
 @import "code.scss";
 
-.comments {
-    padding-top: 6em;
-    padding-bottom: 2em;
+// toc
+.table-of-contents {
+    padding-top: 2em;
+    padding-bottom: 7em;
+
+    h5 {
+        cursor: pointer;
+        display: inline;
+    }
+
+    li {
+    }
 }
 
 // post
@@ -33,4 +42,20 @@
     .entry {
         padding-top: 1em;
     }
+
+    h3 {
+        padding-top: 1em;
+        padding-bottom:0.2em;
+    }
+
+    h4 {
+        padding-top: 0.4em;
+        padding-bottom: 0.1em;
+    }
+}
+
+// comments
+.comments {
+    padding-top: 6em;
+    padding-bottom: 2em;
 }

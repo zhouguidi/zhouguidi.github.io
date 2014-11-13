@@ -18,21 +18,27 @@
     <link rel="icon" href="_images/fa-leaf.png">
 
     <!-- stylesheets -->
-    <!-- site -->
-    <link rel="stylesheet" href="/styles/site.css"/>
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- site -->
+    <link rel="stylesheet" href="/styles/site.css"/>
 
     <!-- other links -->
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml">
 
     <!-- scripts -->
+    {% if site.google_analytics %}
+    <!-- google analytics -->
+    <script src="/scripts/analytics.js"></script>
+    {% endif %}
     <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!-- bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- site -->
+    <script src="/scripts/site.js"></script>
 </head>
 
 <body>
@@ -102,33 +108,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function(){
-            $("#searchinput").hide();
-            $("#searchinput").blur(function() {
-                if ($("#searchinput").val() == "")
-                    $("#searchinput").hide();
-            });
-            $("#searchbutton").mouseenter(function() {
-                $("#searchinput").show().focus();
-            });
-            $("#searchbutton").mouseleave(function() {
-                if ($("#searchinput").val() == "" )
-                    $("#searchinput").hide();
-
-            });
-
-            anchor_bottom();
-        });
-        function anchor_bottom() {
-            if ($(document).height() <= $(window).height())
-                $(".footer").css("position", "absolute").css("bottom", "0").css("left", "0").css("right", "0");
-        }
-    </script>
-
-    <!-- google analytics begins -->
-    {% include analytics.html %}
-    <!-- google analytics ends -->
 </body>
 </html>

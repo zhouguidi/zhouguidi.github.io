@@ -1,5 +1,5 @@
 ---
-title: CoffeScript quick on
+title: CoffeScript Quick On
 tags: [Note, Programming, CoffeeScript]
 ---
 

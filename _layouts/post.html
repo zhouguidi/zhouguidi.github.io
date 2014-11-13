@@ -4,6 +4,13 @@ belongs: blogs
 ---
     <!-- page-specific stylesheets -->
     <link rel="stylesheet" href="/styles/blog.css">
+    <!-- page-specific scripts -->
+    {% if site.disqus %}
+    <!-- disqus -->
+    <script src="//{{ site.disqus }}.disqus.com/embed.js" async="true"></script>
+    {% endif %}
+    <!-- site -->
+    <script src="/scripts/post.js"></script>
 
     <div class="container-fluid">
         <div class="container">
@@ -24,6 +31,23 @@ belongs: blogs
                     </div>
                   </header>
 
+                  <br />
+                  <!-- jumps -->
+                  <ul class="list-inline text-center">
+                      <li class="h5"><a href="{{ site.baseurl }}/blogs/"><i class="fa fa-tasks"></i> Block View</a></li>
+                      <li class="divider"></li>
+                      <li class="h5"><a href="{{ site.baseurl }}/blogs/listview/"><i class="fa fa-list"></i> List View</a></li>
+                      <li class="divider"></li>
+                      <li class="h5"><a href="{{ site.baseurl }}/blogs/tags/"><i class="fa fa-cloud"></i> Tag Could</a></li>
+                  </ul>
+
+                  <!-- TOC -->
+                  <nav role="navigation" class="table-of-contents text-center">
+                      <h5 class="text-primary"><i id="toggle-icon" class="fa fa-plus-circle"></i> Table of Contents</h5>
+                      <ol id="toc" class="lead text-primary">
+                      </ol>
+                  </nav>
+
                   <!-- post content -->
                   <div class="entry lead">
                     {{ content }}
@@ -42,3 +66,9 @@ belongs: blogs
             </article>
         </div>
     </div>
+
+    <!-- disqus starts -->
+    {% if site.disqus %}
+    {% include disqus.html %}
+    {% endif %}
+    <!-- disqus ends -->

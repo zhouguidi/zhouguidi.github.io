@@ -1,0 +1,30 @@
+---
+---
+
+//
+// stylesheet used by the list view page
+//
+
+.form-control {
+    border: 1px solid LightGray;
+}
+
+input, select {
+    font-weight: normal;
+}
+
+.small {
+    font-size: 80%;
+}
+
+td h5 {
+    margin: 0;
+}
+
+ul.list-inline {
+    margin: 0;
+}
+
+.list-inline >li {
+    padding: 0;
+}
