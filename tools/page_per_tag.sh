@@ -6,7 +6,8 @@ tempfn=blogs/page_per_tag.html
 # create tags folder
 mkdir -p blogs/tags
 # delete all subfolders under tags
-find blogs/tags/ -mindepth 1 -type d -exec rm -Rf {} \;
+tagfolds=($(find ./blogs/tags/ -mindepth 1 -type d))
+rm -Rf $tagfolds
 
 # for each tag
 for tag in $tags; do

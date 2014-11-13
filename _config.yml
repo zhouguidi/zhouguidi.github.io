@@ -82,7 +82,6 @@ version: v1.0.0
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  sass_dir: styles
   style: :compressed
 
 # Use the following plug-ins
