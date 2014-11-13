@@ -1,11 +1,12 @@
 ---
 title: When CoffeeScript Meets JQuery
-tags: [note, programming, CoffeeScript, JQuery]
+tags: [Note, Programming, CoffeeScript, JQuery]
 ---
 
 This is a note from Stefan Buhrmester's blog ["How CoffeeScript makes jQuery more fun than ever"](http://buhrmi.tumblr.com/post/5371876452/how-coffeescript-makes-jquery-more-fun-than-ever) which offers an interesting guide through the beauty of both CoffeeScript and JQuery. While the outline of the content and all the examples are taken from there, I added some points which I think worth mentioning.
 
 > When I first started to work with jQuery a couple of years ago it felt as if I reached programmer heaven. ... Enter CoffeeScript. It’s the same story all over again and is just as addictive. 
+> -- Stefan Buhrmester
 
 ### Iterate like a boss
 With CoffeeScript, there's no need to write 

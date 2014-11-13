@@ -1,5 +1,5 @@
 ---
-title: Jekyll Tutorial Part 1
+title: Using Jekyll to Build a Website (Part 1)
 tags: [Tutorial, Web, GitHub_Pages, Jekyll, Liquid]
 belongs: blogs
 ---
