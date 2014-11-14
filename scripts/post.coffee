@@ -1,3 +1,6 @@
+---
+---
+
 maketoc = ->
     h3list = $(".entry h3")
     if h3list.length is 0
