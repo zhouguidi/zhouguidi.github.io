@@ -49,6 +49,7 @@ This is my study note after reading [CoffeeScript: Accelerated JavaScript Develo
 * Variant length arguments: `foo = (arg1, otherArgs...) -> ...`. Inside the function, `otherArgs` will be an array.
 * Variant length argument need not to be the last argument: it can be the first or anywhere. Non-variant arguments have privilege.
 * When calling a function, `...` could be attached to an array to spread it as function's arguments: `foo(1, arr...)` is the same as `foo(1, arr[0], arr[1], ...)`.
+
 ### Collections and iteration
 * Create an object: `obj = new Object()`, or `obj = {}`
 * If the name of an attribute doesn't contain any special character, then use `obj.attr` to refer to it. Otherwise use `obj['attr']`.
@@ -77,6 +78,7 @@ This is my study note after reading [CoffeeScript: Accelerated JavaScript Develo
 * Object model match: `{X: myX, y: myY} = Rect` == `myX = Rect.X; myY = Rect.Y`
 * Very convenient: `{X, Y} = Rect` == `X = Rect.X; Y = Rect.Y`
 * Array and object model match mixed: `{languages: [favorite, others...]} = resume` == `[favorite, others...] = resume.languages`
+
 ### Modules and classes
 * CoffeeScript wraps every file to a single namespace, so a file is a module.
 * To share data across modules, attach data to the global object `window` in browser environment or `global` in Node.js
@@ -91,6 +93,7 @@ This is my study note after reading [CoffeeScript: Accelerated JavaScript Develo
 * `super` without paratheses is a special shortcut for passing all the current method's arguments to its father
 * To test whether an object is an instance of a class, use `a instanceof A`
 * Switch statement: `switch caption \n when 'Kirk', 'Picard', 'Archer' \n ... \n when 'Janeway' new Voyager() \n else throw new Error("wrong!")`
+
 ### Web interactivity with JQuery
 * JQuery selectors are a superclass of CSS
 * Name a JQuery object by a prefix `$` is a common coding convention
@@ -101,6 +104,7 @@ This is my study note after reading [CoffeeScript: Accelerated JavaScript Develo
 * `$("li:has(a)")` to select the list items that contain links
 * Binding events: `$("h1").click -> $(@).html $(@).html + "!"`
 * In binded event handler functions, `@` is the current DOM object that triggers the event
+
 ### Server-side apps with Node.js
 * Node.js module export and include: in included file attach data to `exports`, in other modules use `util = require './util'`
 * In Javascript files, if want to include CoffeeScript module, use `require('coffee-script')` before including the module
