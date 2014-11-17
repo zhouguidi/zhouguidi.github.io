@@ -21,5 +21,5 @@ toggletoc = ->
 
 $ ->
     maketoc()
-    $("nav.table-of-contents h5").click => toggletoc()
+    $("nav.table-of-contents h5").click -> toggletoc()
     $("#toc").hide()

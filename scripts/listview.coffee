@@ -110,7 +110,7 @@ $ ->
     # input policy change -> filter
     $("#input-policy").bind("input change", -> filter()).trigger "input"
     # clear button click -> reset
-    $("#button-clear").click =>
+    $("#button-clear").click ->
         $("#input-tags").val ""
         $("#input-start-date").val ""
         $("#input-end-date").val ""
