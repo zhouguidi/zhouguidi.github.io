@@ -60,9 +60,9 @@ a(b, c)  # function: a, argument: b and c
 a(b)(c)  # function: a(b), argument: c
 {% endhighlight %}
 
-This involves also the role of commas in CoffeeScript: **they are only used to seperate function arguments and fields of objects**. By knowing this, and the fact that **blanks are never translated to commas**, the second candidate drops out. Now if we use our heads harder, the difference between candidates number 1 and 3 is really a question of **associativity**: are blanks in CoffeeScript left or right associative? If they are right associative, candidate #1 wins; if they are left associative, candidate #3 wins.
+This involves also the role of commas in CoffeeScript: _they are only used to seperate function arguments and fields of objects_. By knowing this, and the fact that _blanks are never translated to commas_, the second candidate drops out. Now if we use our heads harder, the difference between candidates number 1 and 3 is really a question of _associativity_: are blanks in CoffeeScript left or right associative? If they are right associative, candidate #1 wins; if they are left associative, candidate #3 wins.
 
-Now what does the judge -- the compiler -- say? He chooses candidate #1. That is to say, **blanks in CoffeeScript are right-associative**.
+Now what does the judge -- the compiler -- say? He chooses candidate #1. That is to say, _blanks in CoffeeScript are right-associative_.
 
 Why is that? Maybe it helps to understand the behaviour of the CoffeeScript compiler in this way:
 
@@ -83,7 +83,7 @@ flag = regs.every((r) -> tags.some((t) -> r.test(t)))
 
 meaning passing `t` to `r.test`, using its return value as the return value of a new function `(t) -> ...`, and pass that function as the argument for `tags.some`, whose return value should be returned by another new function `(r) -> ...`, then pass that function as the argument for `regs.every`, and finaly use the return value of `regs.every`.
 
-You may have observed, we actually have read the line from right to left, and it sounds quite natural. That's right. **[It's recommended to read CoffeeScript code from right to left](http://coffeescript.carbonfive.com/)**. It's not that straitforward to always replace blanks with left paratheses in head, but the latter piece of advice comes in handy.
+You may have observed, we actually have read the line from right to left, and it sounds quite natural. That's right. _[It's recommended to read CoffeeScript code from right to left](http://coffeescript.carbonfive.com/)_. It's not that straitforward to always replace blanks with left paratheses in head, but the latter piece of advice comes in handy.
 
 ### Summary
 I think it's pretty clear now, that after we understand the role of blanks (and commas too), there're no magic at all. Our world of CoffeeScript just got better.

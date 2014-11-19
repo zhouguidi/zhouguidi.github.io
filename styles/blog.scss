@@ -44,21 +44,30 @@
 
     .entry {
         padding-top: 1em;
-    }
+        color: black;
 
-    h3 {
-        padding-top: 1em;
-        padding-bottom:0.2em;
-    }
+        h3 {
+            padding-top: 1em;
+            padding-bottom:0.2em;
+        }
 
-    h4 {
-        padding-top: 0.4em;
-        padding-bottom: 0.1em;
-    }
+        h4 {
+            padding-top: 0.4em;
+            padding-bottom: 0.1em;
+        }
 
-    blockquote {
-        border-color: SeaGreen;
-        font-size: 1.2em;
+        blockquote {
+            border-color: SeaGreen;
+            font-size: 1.2em;
+        }
+
+        code {
+            color: rgba(49, 18, 207, 1);
+        }
+
+        em {
+            color: rgba(9, 114, 21, 1);
+        }
     }
 }
 

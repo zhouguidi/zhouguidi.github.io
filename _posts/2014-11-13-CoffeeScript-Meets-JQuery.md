@@ -6,7 +6,7 @@ tags: [Note, Programming, CoffeeScript, JQuery]
 This is a note from Stefan Buhrmester's blog ["How CoffeeScript makes jQuery more fun than ever"](http://buhrmi.tumblr.com/post/5371876452/how-coffeescript-makes-jquery-more-fun-than-ever) which offers an interesting guide through the beauty of both CoffeeScript and JQuery. While the outline of the content and most of the examples are taken from there, I added some points which I think worth mentioning and added something not obvious in the origional article.
 
 > When I first started to work with jQuery a couple of years ago it felt as if I reached programmer heaven. ... Enter CoffeeScript. It’s the same story all over again and is just as addictive. 
-> -- Stefan Buhrmester
+> -- <cite>Stefan Buhrmester</cite>
 
 ### Iterate like a boss
 With CoffeeScript, where we previously have to write 
