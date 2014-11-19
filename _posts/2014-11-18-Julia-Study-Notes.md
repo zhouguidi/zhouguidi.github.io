@@ -480,24 +480,24 @@ tags: [Note, Programming, Julia]
 * To initiate an incremental search through the previous history, type ^R — the control key together with the r key. The prompt will change to (reverse-i-search)‘’:, and as you type the search query will appear in the quotes. The most recent result that matches the query will dynamically update to the right of the colon as more is typed. To find an older result using the same query, simply type ^R again. Just as ^R is a reverse search, ^S is a forward search, with the prompt (i-search)‘’:. The two may be used in conjunction with each other to move through the previous or next matching results, respectively.
 
 ### Running External Programs
-* Julia borrows backtick notation for commands from the shell, Perl, and Ruby: ``echo hello``
+* Julia borrows backtick notation for commands from the shell, Perl, and Ruby: `` `echo hello` ``
 * Instead of immediately running the command, backticks create a `Cmd` object to represent the command. You can use this object to connect the command to others via pipes, run it, and read or write to it.
 * When the command is run, Julia does not capture its output unless you specifically arrange for it to. Instead, the output of the command by default goes to stdout as it would using libc‘s system call.
 * The command is never run with a shell. Instead, Julia parses the command syntax directly, appropriately interpolating variables and splitting on words as the shell would, respecting shell quoting syntax. The command is run as julia‘s immediate child process, using fork and exec calls.
-* `run(``echo hello``)`
+* `` run(`echo hello`) ``
 * The `run` method itself returns `nothing`, and throws an `ErrorException` if the external command fails to run successfully.
-* If you want to read the output of the external command, the `readall` method can be used instead: `a=readall(``echo hello``)`
-* You can use `$` for interpolation much as you would in a string literal: ``sort $file``
+* If you want to read the output of the external command, the `readall` method can be used instead: `` a=readall(`echo hello`) ``
+* You can use `$` for interpolation much as you would in a string literal: `` `sort $file` ``
 * The value of `file` is never interpreted by a shell, so there’s no need for actual quoting.
 * If you interpolate an array as part of a shell word, Julia emulates the shell’s {a,b,c} argument generation.
 * If you interpolate multiple arrays into the same word, the shell’s Cartesian product generation behavior is emulated.
-* ``rm -rf $["foo","bar","baz","qux"].$["aux","log","pdf"]``
+* `` `rm -rf $["foo","bar","baz","qux"].$["aux","log","pdf"]` ``
 * Shell metacharacters, such as `|`, `&`, and `>`, are not special inside of Julia’s backticks.
-* One uses Julia’s `|>` operator between Cmd objects: `run(``echo hello`` |> ``sort``)`
+* One uses Julia’s `|>` operator between Cmd objects: `` run(`echo hello` |> `sort`) ``
 * Julia itself does the work to setup pipes and connect file descriptors that is normally done by the shell.
 * Note that `|>` only redirects `stdout`. To redirect `stderr`, use `.>`
-* Julia can run multiple commands in parallel: `run(``echo hello`` & ``echo world``)`
-* Julia lets you pipe the output from both of these processes to another program: `run(``echo world`` & ``echo hello`` |> ``sort``)`
+* Julia can run multiple commands in parallel: `` run(`echo hello` & `echo world`) ``
+* Julia lets you pipe the output from both of these processes to another program: `` run(`echo world` & `echo hello` |> `sort`) ``
 * In terms of UNIX plumbing, what’s happening here is that a single UNIX pipe object is created and written to by both `echo` processes, and the other end of the pipe is read from by the `sort` command.
 
 ### Packages
